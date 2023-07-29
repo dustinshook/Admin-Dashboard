@@ -1,0 +1,42 @@
+:root {
+
+}
+
+body {
+    background-color: #f1f1f1;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-areas:
+        "sidebar header header"
+        "sidebar main main"
+        "sidebar main main";
+    grid-template-columns: 250px 1fr 1fr;
+    grid-template-rows: 100px 1fr 1fr;
+    
+}
+
+#main {
+    grid-area: main;
+    background-color: #ca4545;
+    padding: 20px;
+}
+
+#header {
+    grid-area: header;
+    background-color: #3e70b7;
+    padding: 20px;
+}
+
+#sidebar {
+    grid-area: sidebar;
+    background-color: #3d9032;
+    padding: 20px;
+}
