@@ -6,6 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const main = document.getElementById('main');
 
     // SIDEBAR
-    renderSidebar(sidebar);
+    /* renderSidebar(sidebar); */
 
 });
