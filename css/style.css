@@ -15,11 +15,13 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Kanit', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* page layout */
 
 .wrapper {
     display: grid;
@@ -53,7 +55,13 @@ body {
     grid-area: sidebar;
     background-color: var(--primary-color);
     color: var(--primary-light);
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-columns: 1fr;
+
 }
+
+/* sidebar */
 
 .menu {
     list-style: none;
@@ -68,13 +76,24 @@ body {
     display: grid;
     grid-template-columns: 1fr 3fr;
     padding: var(--spacing);
-    gap: 1em;
+    place-items: center;
+    font-size: 2rem;
+    color: var(--primary-light);
+    background-color: var(--secondary-color);
+    border-bottom: 1px solid var(--tertiary-color);
+    place-items: center;
+    gap: 0.1em;
+}
+
+.dashboard-logo i {
+    grid-column: 1; 
+    justify-self: end;
+   
 }
 
 .dashboard-logo > span {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #fff;
+    grid-column: 2;
+    justify-self: start;
 }
 
 .menu-item a {
@@ -82,6 +101,7 @@ body {
     font-size: 1.5rem;
     border-radius: var(--border-radius);
     display: flex;
+    align-items: baseline;
     gap: 1.5em;
     text-decoration: none;
     color: var(--primary-light);
@@ -96,7 +116,8 @@ body {
     background-color: var(--secondary-color);
 }
 
-/* header */
+/* ====== header ====== */
+
 .search-group {
     grid-column: 1;
     grid-row: 1;
@@ -115,4 +136,108 @@ body {
     outline: none;
     color: var(--secondary-color);
     flex-grow: 1;
+    font-size: 1.2rem;
+}
+
+.user-group {
+    grid-column: 2;
+    grid-row: 1;
+    padding: var(--spacing);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: end;
+}
+
+.user-group > i {
+    font-size: 2rem;
+}
+
+.pfp {
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    justify-self: center;
+}
+
+.pfp.medium {
+    height: 75px;
+    width: 75px;
+}
+
+.pfp.large {
+    height: 125px;
+    width: 125px;
+}
+
+.pfp.dustin {
+    background-image: url(../assets/wooodie.png);
+}
+
+.user-name {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: start;
+    font-size: 1.25rem;
+}
+
+.welcome-group {
+    grid-column: 1;
+    grid-row: 2;
+    padding: var(--spacing);
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 2fr;
+}
+
+.welcome-group .pfp {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    align-self: start;
+}
+
+.welcome-group  .message {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+    font-size: 1rem;
+}
+
+.welcome-group .user-name {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    font-size: 2.25rem;
+}
+
+.buttons-group {
+    grid-column: 2;
+    grid-row: 2;
+    padding: var(--spacing);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+    place-content: center;
+}
+
+.button {
+    padding: 0.5em 1em;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    color: var(--primary-light);
+    font-size: 1.25rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--quaternary-color);
+}
+
+.button:active {
+    background-color: var(--secondary-color);
 }

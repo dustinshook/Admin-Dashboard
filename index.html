@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
     <title>Admin Dashboard</title>
 </head>
 <body>
     <div class="wrapper" id="layout">
         <div id="sidebar">
             <div class="dashboard-logo">
-                <span>Dashboard</span>
+                <i class="fas fa-user-circle"></i>
+                <span>MyAdmin</span>
             </div>
-
             <ul class="menu">
                 <li class="menu-item"><a href="#"><i class="fas fa-home"></i>Home</a></li>
                 <li class="menu-item"><a href="#"><i class="fas fa-id-card"></i>Profile</a></li>
@@ -24,7 +27,6 @@
                 <li class="menu-item"><a href="#"><i class="fas fa-cog"></i>Settings</a></li>
                 <li class="menu-item"><a href="#"><i class="fas fa-life-ring"></i>Support</a></li>
                 <li class="menu-item"><a href="#"><i class="fas fa-user-shield"></i>Privacy</a></li>
-
             </ul>
         </div>
         <div id="header">
@@ -35,6 +37,21 @@
                     id="site-search"
                     name="q"
                     aria-label="Search through site content"/>
+            </div>
+            <div class="user-group">
+                <i class="far fa-bell"></i>
+                <div class="pfp dustin medium"></div>
+                <div class="user-name">Dustin Shook</div>
+            </div>
+            <div class="welcome-group">
+                <div class="pfp dustin large"></div>
+                <div class="message">Welcome back,</div>
+                <div class="user-name">Dustin Shook (@dshook)</div>
+            </div>
+            <div class="buttons-group">
+                <div class="button" id="new">New</div>
+                <div class="button" id="upload">Upload</div>
+                <div class="button" id="share">Share</div>
             </div>
         </div>
         <div id="main"></div>
