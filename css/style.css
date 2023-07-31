@@ -38,17 +38,22 @@ body {
 
 #main {
     grid-area: main;
-    background-color: var(--tertiary-color);
+    background-color: var(--secondary-light);
     padding: var(--spacing);
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 50px 1fr 50px 1fr;
+    gap: 1em;
 }
 
 #header {
     grid-area: header;
     background-color: var(--primary-light);
-    padding: var(--spacing);
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 2fr;
+    padding: 0.25em 2em;
+    border-bottom: 4px solid rgba(11, 11, 11, 0.2);
 }
 
 #sidebar {
@@ -142,7 +147,6 @@ body {
 .user-group {
     grid-column: 2;
     grid-row: 1;
-    padding: var(--spacing);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
@@ -161,17 +165,34 @@ body {
 }
 
 .pfp.medium {
-    height: 75px;
-    width: 75px;
+    height: 50px;
+    width: 50px;
 }
 
 .pfp.large {
     height: 125px;
     width: 125px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
 .pfp.dustin {
     background-image: url(../assets/wooodie.png);
+}
+
+.pfp.frog {
+    background-image: url(../assets/fg.png);
+}
+
+.pfp.duck {
+    background-image: url(../assets/backpack.png);
+}
+
+.pfp.cat {
+    background-image: url(../assets/uncool.png);
+}
+
+.pfp.dino {
+    background-image: url(../assets/trex.png);
 }
 
 .user-name {
@@ -184,7 +205,6 @@ body {
 .welcome-group {
     grid-column: 1;
     grid-row: 2;
-    padding: var(--spacing);
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr 2fr;
@@ -213,7 +233,6 @@ body {
 .buttons-group {
     grid-column: 2;
     grid-row: 2;
-    padding: var(--spacing);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1em;
@@ -235,9 +254,107 @@ body {
 }
 
 .button:hover {
-    background-color: var(--quaternary-color);
+    background-color: var(--secondary-color);
 }
 
 .button:active {
-    background-color: var(--secondary-color);
+    background-color: var(--quaternary-color);
+}
+
+/* ====== main ====== */
+
+.title {
+    font-size: 1.5rem;
+}
+
+.title.projects {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: baseline;
+}
+
+.title.anouncements {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.title.trending {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.projects-container {
+    grid-column: 1;
+    grid-row: 2 / span 4;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1em;
+}
+
+.projects-container .card {
+    background-color: var(--primary-light);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    padding: var(--spacing);
+    border-left: 0.5em solid var(--quaternary-color);
+    
+}
+
+.anouncements-container {
+    background-color: var(--primary-light);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    padding: var(--spacing);
+    grid-column: 2;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+}
+
+.anouncements-item {
+    border-bottom: 1px solid var(--tertiary-color);
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.announcement-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.announcement-message {
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+}
+
+.anouncements-container .anouncements-item:last-child {
+    border-bottom: none;
+}
+
+.trending-container {
+    background-color: var(--primary-light);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    padding: var(--spacing);
+    grid-column: 2;
+    grid-row: 4 / span 2;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.trending-user {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.user-bio {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-info {
+    color: gray;
 }
